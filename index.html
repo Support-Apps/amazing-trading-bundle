@@ -318,11 +318,14 @@
     gap: 28px;
   }
 
-  .p-card {
+.p-card {
     background: var(--cream);
     border-radius: 20px;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    /* הוסיפי את שתי השורות האלו */
+    display: flex;
+    flex-direction: column;
   }
 
   .p-card:hover {
@@ -344,7 +347,12 @@
 
   .p-card:hover .p-card-img img { transform: scale(1.05); }
 
-  .p-card-body { padding: 24px 28px 28px; }
+.p-card-body { 
+    padding: 24px 28px 28px; 
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* זה החלק החסר שגורם להכל להימתח */
+  }
 
   .p-tag {
     display: inline-block;
@@ -374,15 +382,15 @@
     line-height: 1.65;
   }
 
-  .view-link {
+.view-link {
     display: inline-block;
-    margin-top: 10px;
-    font-size: 0.82rem;
+    margin-top: auto; /* עכשיו זה יעבוד כי ה-body ממלא את כל הגובה */
+    padding-top: 15px; 
     font-weight: 700;
     color: var(--gold-dark);
     text-decoration: none;
-    letter-spacing: 0.5px;
-    transition: color 0.3s;
+    text-transform: uppercase;
+    font-size: 0.95rem;
   }
 
   .view-link:hover { color: var(--gold); }
